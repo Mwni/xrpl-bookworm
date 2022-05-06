@@ -1,20 +1,20 @@
-import { init } from './xrpl.js'
-import cripple from './cripple.js'
-import * as config from './config.js'
+import block from './tasks/block.js'
 
-await init({
-	...config, 
-	token: {
-		currency: '785368726F6F6D00000000000000000000000000',
-		issuer: 'rHqLei9xJch13JioYHsDUwWJoz81QQh6LU'
-	}
-})
+const [command, arg1] = process.argv.slice(2)
 
-switch(process.argv[2]){
-	case 'cripple': 
-		await cripple(config)
+switch(command){
+	case 'block': 
+		if(!arg1){
+			console.error(`please specify token in format CURRENCY:ISSUER`)
+			process.exit(1)
+		}
+
+		let [currency, issuer] = arg1.split(':')
+
+		await block({currency, issuer})
 		break
 
 	default:
-		console.log(`specify command: (cripple|fix|undo)`)
+		console.log(`specify command: (block|fix|undo)`)
+		process.exit(0)
 }
