@@ -8,8 +8,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@xrplworks/amount": "^1.0.0",
-    "@xrplworks/xfl": "^1.0.1",
+    "@xrplworks/amount": "../../xrplworks/toolkit/amount",
+    "@xrplworks/xfl": "../../xrplworks/toolkit/xfl",
+    "@xrplworks/book": "../../xrplworks/toolkit/book",
+    "@xrplworks/currency": "../../xrplworks/toolkit/currency",
     "xrpl": "^2.2.2"
   }
 }
