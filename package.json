@@ -1,17 +1,15 @@
 {
-  "name": "book-crippler",
+  "name": "xrpl-bookworm",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
-    "@xrplworks/amount": "../../xrplworks/toolkit/amount",
-    "@xrplworks/xfl": "../../xrplworks/toolkit/xfl",
-    "@xrplworks/book": "../../xrplworks/toolkit/book",
-    "@xrplworks/currency": "../../xrplworks/toolkit/currency",
-    "xrpl": "^2.2.2"
+    "@xrplkit/account": "../../xrplkit/account",
+    "@xrplkit/amount": "../../xrplkit/amount",
+    "@xrplkit/book": "../../xrplkit/book",
+    "@xrplkit/socket": "../../xrplkit/socket",
+    "@xrplkit/wallet": "../../xrplkit/wallet",
+    "@xrplkit/xfl": "../../xrplkit/xfl"
   }
 }

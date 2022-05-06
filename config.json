@@ -1,0 +1,6 @@
+{
+	"node": "wss://xrplcluster.com",
+	"spendableXRP": "0.01",
+	"cripplingXRP": "0.00000117",
+	"walletSeed": "sEdSRyAomwoo2VbQP6SeySBuT44Udsj"
+}
