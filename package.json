@@ -5,11 +5,12 @@
   "main": "index.js",
   "license": "ISC",
   "dependencies": {
-    "@xrplkit/account": "../../xrplkit/account",
-    "@xrplkit/amount": "../../xrplkit/amount",
-    "@xrplkit/book": "../../xrplkit/book",
-    "@xrplkit/socket": "../../xrplkit/socket",
-    "@xrplkit/wallet": "../../xrplkit/wallet",
-    "@xrplkit/xfl": "../../xrplkit/xfl"
+    "@xrplkit/account": "1.0.0",
+    "@xrplkit/amount": "1.0.0",
+    "@xrplkit/book": "1.0.0",
+    "@xrplkit/socket": "1.0.0",
+    "@xrplkit/wallet": "1.0.0",
+    "@xrplkit/submit": "1.0.0",
+    "@xrplkit/xfl": "1.0.0"
   }
 }
