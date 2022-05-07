@@ -1,18 +1,28 @@
 import Socket from '@xrplkit/socket'
 import { deriveAddress } from '@xrplkit/wallet'
+import { submitAndWait } from '@xrplkit/submit'
 import fs from 'fs'
 
-const { node, walletSeed, spendableXRP, cripplingXRP } = JSON.parse(
+const { node, walletSeed, spendableDrops, cripplingDrops } = JSON.parse(
 	fs.readFileSync('config.json', 'utf-8')
 )
 
 export const socket = new Socket(node)
 export const wallet = { address: deriveAddress({ seed: walletSeed }), seed: walletSeed }
-export { spendableXRP, cripplingXRP }
+export { spendableDrops, cripplingDrops }
 
-export function submit(tx){
-	process.stdout.write(`submitting ${submission.tx.TransactionType} to the XRPL...`)
-	console.log(`done`)
+export async function submit(tx){
+	process.stdout.write(`submitting [${tx.TransactionType}] ... `)
+
+	let result = await submitAndWait({
+		socket,
+		tx,
+		seed: wallet.seed,
+		autofill: true
+	})
+
+	console.log(result.engine_result)
+	return result.engine_result
 }
 
 console.log(``)
