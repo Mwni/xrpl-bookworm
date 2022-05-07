@@ -1,0 +1,6 @@
+{
+	"node": "wss://xrplcluster.com",
+	"spendableDrops": "10000",
+	"cripplingDrops": "1.13",
+	"walletSeed": "WALLET_SEED_HERE"
+}
