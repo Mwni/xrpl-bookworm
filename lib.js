@@ -7,9 +7,18 @@ const { node, walletSeed, spendableDrops, cripplingDrops } = JSON.parse(
 	fs.readFileSync('config.json', 'utf-8')
 )
 
+console.log(``)
+console.log(`*** XRPL BOOKWORM ***`)
+console.log(`using node:	${node}`)
+
 export const socket = new Socket(node)
-export const wallet = { address: deriveAddress({ seed: walletSeed }), seed: walletSeed }
+export const wallet = readWallet()
 export { spendableDrops, cripplingDrops }
+
+if(wallet)
+	console.log(`using wallet:	${wallet.address}`)
+
+console.log(``)
 
 export async function submit(tx){
 	process.stdout.write(`submitting [${tx.TransactionType}] ... `)
@@ -25,8 +34,14 @@ export async function submit(tx){
 	return result.engine_result
 }
 
-console.log(``)
-console.log(`*** XRPL BOOKWORM ***`)
-console.log(`using node:	${node}`)
-console.log(`using wallet:	${wallet.address}`)
-console.log(``)
+function readWallet(){
+	try{
+		return { 
+			address: deriveAddress({ seed: walletSeed }), 
+			seed: walletSeed 
+		}
+	}catch{
+		console.log('wallet seed in config.json is not valid')
+		console.log('only the "check" command will work now')
+	}
+}
