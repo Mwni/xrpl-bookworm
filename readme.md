@@ -2,6 +2,10 @@
 
 This is a small command line tool that allows you to check the XRPL for "glitched" offers and subsequently fix them. These offers can happen due to the offer maker's account having such little funding that it results in a floating point precision error.
 
+👉 Read about the technicalities of this glitch: [XLS-28](https://github.com/XRPLF/XRPL-Standards/discussions/74)
+
+👉 Check out the patch amendment: [fixReducedOffersV1](https://github.com/XRPLF/rippled/pull/4512)
+
 ### What you need
 
  - Node.js 14+
